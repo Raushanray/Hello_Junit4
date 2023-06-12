@@ -14,4 +14,11 @@ public class GreetingImplTest {
 		assertNotNull(result);
 		assertEquals("Hello Junit", result);
 	}
+	
+	@Test(expected  = IllegalArgumentException.class)
+	public void greetShouldThrowAnException_For_NameIsNull() {
+		Greeting greeting = new GreetingImpl();
+		System.out.println("greetShouldThrowAnException_For_NameIsNull");
+		greeting.greet(null);
+	}
 }
