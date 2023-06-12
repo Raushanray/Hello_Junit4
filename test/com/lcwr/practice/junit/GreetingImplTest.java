@@ -21,4 +21,10 @@ public class GreetingImplTest {
 		System.out.println("greetShouldThrowAnException_For_NameIsNull");
 		greeting.greet(null);
 	}
+	@Test(expected  = IllegalArgumentException.class)
+	public void greetShouldThrowAnException_For_NameIsBlank() {
+		Greeting greeting = new GreetingImpl();
+		System.out.println("greetShouldThrowAnException_For_NameIsBlank");
+		greeting.greet("");
+	}
 }
